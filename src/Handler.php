@@ -9,7 +9,7 @@ class Handler
 
 	public function __construct()
 	{
-		$file = __DIR__.'/../access_token.key';
+		$file = __DIR__.'/../config/access_token.key';
 		if (!file_exists($file)) {
 			throw new Exception('Отсутсвует файл с ключом');
 		}
