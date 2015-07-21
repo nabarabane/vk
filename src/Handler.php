@@ -11,7 +11,7 @@ class Handler
 	{
 		$file = __DIR__.'/../config/access_token.key';
 		if (!file_exists($file)) {
-			throw new Exception('Отсутсвует файл с ключом');
+			throw new \Exception('Отсутсвует файл с ключом');
 		}
 
 		$this->access_token = trim(file_get_contents($file));
@@ -33,7 +33,7 @@ class Handler
 		curl_close($ch);
 
 		if ($error) {
-			throw new Exception($error);
+			throw new \Exception($error);
 		}
 
 		$this->result = json_decode($result);
@@ -45,6 +45,6 @@ class Handler
 
 	private function catchError()
 	{
-		return new Exception('Code: ('.$this->result->error->error_code.') '.$this->result->error->error_msg);
+		return new \Exception('Code: ('.$this->result->error->error_code.') '.$this->result->error->error_msg);
 	}
 }

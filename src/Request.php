@@ -9,11 +9,11 @@ class Request
 	public function __construct($method = null, $params = null)
 	{
 		if (empty($method)) {
-			throw new Exception('Не указан метод запроса');
+			throw new \Exception('Не указан метод запроса');
 		}
 
 		if (empty($params) || !is_array($params)) {
-			throw new Exception('Не указаны параметры запроса');
+			throw new \Exception('Не указаны параметры запроса');
 		}
 
 		$this->url = $method;
