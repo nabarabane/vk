@@ -46,5 +46,8 @@ class Webhook
 		foreach($this->getCallbacks($event) as $callback) {
 			call_user_func($callback, $object, $id);
 		}
+
+		echo 'ok';
+		die;
 	}
 }
